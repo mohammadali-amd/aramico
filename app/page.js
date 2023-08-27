@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between px-8 xl:px-60 md:mt-36 mt-20">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec adipiscing tristique risus. Vitae proin sagittis nisl rhoncus mattis. Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Sagittis nisl rhoncus mattis rhoncus urna. A condimentum vitae sapien pellentesque habitant. Nam at lectus urna duis convallis. Gravida cum sociis natoque penatibus et magnis. Blandit libero volutpat sed cras ornare arcu. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Pretium viverra suspendisse potenti nullam ac. Aliquet bibendum enim facilisis gravida. Massa id neque aliquam vestibulum morbi blandit. Vitae justo eget magna fermentum iaculis eu.
       <br />      <br />      <br />
       Magna fermentum iaculis eu non diam phasellus vestibulum lorem. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Odio facilisis mauris sit amet massa vitae. Dis parturient montes nascetur ridiculus. Bibendum at varius vel pharetra vel. Fermentum dui faucibus in ornare quam. Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Etiam dignissim diam quis enim lobortis. Id interdum velit laoreet id. Pellentesque diam volutpat commodo sed egestas.
