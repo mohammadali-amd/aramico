@@ -3,17 +3,18 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
+import { phone, email, search, twitter, instagram, linkedin, youtube, language } from "../images/icons";
 import Logo from '../public/aramico-Logo.png'
 import Image from 'next/image';
 
 const links = [
-  { name: 'News', slug: '#a' },
-  { name: 'About Us', slug: '#b' },
-  { name: 'Fieald of Work', slug: '#g' },
-  { name: 'R&D', slug: '#d' },
-  { name: 'Projects', slug: '#e' },
-  { name: 'Career', slug: '#f' },
-  { name: 'Contact Us', slug: '#c' },
+    { name: 'News', slug: '#a' },
+    { name: 'About Us', slug: '#b' },
+    { name: 'Fieald of Work', slug: '#g' },
+    { name: 'R&D', slug: '#d' },
+    { name: 'Projects', slug: '#e' },
+    { name: 'Career', slug: '#f' },
+    { name: 'Contact Us', slug: '#c' },
 ];
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
     useEffect(() => {
         window.addEventListener('scroll', changeStyle);
         return () => {
-          window.removeEventListener('scroll', changeStyle);
+            window.removeEventListener('scroll', changeStyle);
         };
     }, []);
 
@@ -36,26 +37,46 @@ const Navbar = () => {
             <nav className='mx-auto flex justify-center shadow-lg sm:px-16 px-6 py-4'>
                 {/* Desktop Menu */}
                 <div className='hidden lg:block'>
-                    <div className="grid grid-rows-2 grid-flow-col">
-                        <div className='grid content-center row-span-2 mr-20'>
+                    <div className='grid relative grid-rows-2 grid-flow-col'>
+                        <div className='grid content-center row-span-3 mr-20'>
                             <Image src={Logo} alt="logo" className={`object-contain justify-end duration-300  ${isScrolled ? 'w-40' : 'w-64'}`} />
                         </div>
                         
-                        <div className="text-[0.85rem] font-light flex gap-12">
-                            <span>📞 <Link href={'#'} scroll={false} legacyBehavior>021-42167000</Link></span>
-                            <span>✉ <Link href={'#'} scroll={false} legacyBehavior>info@arami-co.com</Link></span>
+                        <div className="text-[0.85rem] font-light flex items-start gap-12 mt-[2px]">
+                            <span className='flex gap-1'>
+                                <Image src={phone} width={15} alt="phone" />
+                                <Link href={'#'}>021-42167000</Link>
+                            </span>
+                            <span className='flex gap-1'>
+                                <Image src={email} width={15} alt="email" />
+                                <Link href={'#'}>info@arami-co.com</Link>
+                            </span>
                         </div>
 
-                        <div className='fixed right-[20%]'>
-                            <input 
+                        <hr className={`mt-1 ${isScrolled ? 'hidden' : ''}`}/>
+
+                        <div className='absolute flex items-center gap-2 right-0'>
+                            <Image src={search} width={13} alt="search" />
+                            <input
                                 type="search"
                                 id="default-search"
-                                class="w-48 h-6 text-xs text-gray-900 border border-gray-300"
+                                className="w-44  h-5 text-xs text-gray-900 border border-gray-300"
                                 // placeholder="Search Mockups, Logos..."
                             />
+                            <span className='flex items-center gap-3'>
+                                <Link href={'#'}><Image src={twitter} width={13} alt="twitter" /></Link>
+                                <Link href={'#'}><Image src={instagram} width={13} alt="instagram" /></Link>
+                                <Link href={'#'}><Image src={linkedin} width={15} alt="linkedin" /></Link>
+                                <Link href={'#'}><Image src={youtube} width={16} alt="youtube" /></Link>
+                                <Link href={'#'}><Image src={language} width={16} alt="language" /></Link>
+                            </span>
                         </div>
-                    
-                        <ul className="hidden lg:flex gap-10 text-[14px] font-light leading-[30px] z-[2]">
+                    {/* twitter
+                        instagram
+                        linkedin
+                        youtube
+                        language */}
+                        <ul className={`hidden lg:flex gap-10 text-[14px] font-light leading-[30px] z-[2] ${isScrolled ? 'pt-1' : ''}`}>
                             {links.map((item) => (
                             <li key={item.slug}>
                                 <Link href={item.slug} scroll={false} legacyBehavior>{item.name}</Link>
