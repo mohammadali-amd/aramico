@@ -1,14 +1,13 @@
+"use client"
+
+import Slider from '../components/Slider';
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-8 xl:px-60 md:mt-36 mt-20">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec adipiscing tristique risus. Vitae proin sagittis nisl rhoncus mattis. Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Sagittis nisl rhoncus mattis rhoncus urna. A condimentum vitae sapien pellentesque habitant. Nam at lectus urna duis convallis. Gravida cum sociis natoque penatibus et magnis. Blandit libero volutpat sed cras ornare arcu. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Pretium viverra suspendisse potenti nullam ac. Aliquet bibendum enim facilisis gravida. Massa id neque aliquam vestibulum morbi blandit. Vitae justo eget magna fermentum iaculis eu.
-      <br />      <br />      <br />
-      Magna fermentum iaculis eu non diam phasellus vestibulum lorem. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Odio facilisis mauris sit amet massa vitae. Dis parturient montes nascetur ridiculus. Bibendum at varius vel pharetra vel. Fermentum dui faucibus in ornare quam. Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Etiam dignissim diam quis enim lobortis. Id interdum velit laoreet id. Pellentesque diam volutpat commodo sed egestas.
-      <br />      <br />      <br />
-      Eget sit amet tellus cras. Imperdiet dui accumsan sit amet nulla facilisi. Ligula ullamcorper malesuada proin libero nunc. Et tortor consequat id porta nibh venenatis cras sed felis. Ornare arcu dui vivamus arcu felis bibendum ut tristique. Proin gravida hendrerit lectus a. Neque vitae tempus quam pellentesque. Convallis aenean et tortor at. Consequat id porta nibh venenatis cras sed felis eget. Diam maecenas ultricies mi eget mauris pharetra et. Id diam maecenas ultricies mi eget mauris pharetra et ultrices.
-      <br />      <br />      <br />
-      Eget mauris pharetra et ultrices. Eget velit aliquet sagittis id consectetur. Molestie at elementum eu facilisis sed odio morbi. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Fames ac turpis egestas sed tempus. Arcu odio ut sem nulla. Id eu nisl nunc mi ipsum faucibus vitae. Feugiat sed lectus vestibulum mattis. Non tellus orci ac auctor augue mauris augue neque. Cursus vitae congue mauris rhoncus aenean vel elit. Posuere ac ut consequat semper viverra nam libero justo. Eu feugiat pretium nibh ipsum consequat nisl. Odio facilisis mauris sit amet massa vitae. Tincidunt arcu non sodales neque. Ridiculus mus mauris vitae ultricies.
-      <br />      <br />      <br />
+      <div className='h-[40rem]'>
+        <Slider />
+      </div>
       Fermentum posuere urna nec tincidunt praesent. Aliquam faucibus purus in massa tempor nec. Sem et tortor consequat id. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Neque gravida in fermentum et sollicitudin ac orci. Dignissim cras tincidunt lobortis feugiat vivamus at. Tortor condimentum lacinia quis vel eros donec. Laoreet non curabitur gravida arcu ac tortor dignissim. Viverra maecenas accumsan lacus vel facilisis. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Turpis in eu mi bibendum neque egestas congue quisque. Amet tellus cras adipiscing enim eu turpis egestas. Id semper risus in hendrerit gravida rutrum. Nibh cras pulvinar mattis nunc sed blandit libero. Morbi tincidunt augue interdum velit.
       <br />      <br />      <br />
       Massa tincidunt nunc pulvinar sapien. Ipsum dolor sit amet consectetur adipiscing. Urna et pharetra pharetra massa. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Ipsum dolor sit amet consectetur adipiscing elit ut. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Odio facilisis mauris sit amet massa vitae. Nibh nisl condimentum id venenatis a condimentum vitae sapien. Aliquet nec ullamcorper sit amet risus nullam eget felis. Interdum consectetur libero id faucibus nisl tincidunt eget nullam.

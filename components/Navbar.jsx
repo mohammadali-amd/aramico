@@ -34,15 +34,15 @@ const Navbar = () => {
 
     return (
         <header className='w-full fixed top-0 z-10 bg-white'>
-            <nav className='mx-auto flex justify-center shadow-lg sm:px-16 px-6 py-4'>
+            <nav className='mx-auto flex justify-center shadow-lg py-5'>
                 {/* Desktop Menu */}
                 <div className='hidden lg:block'>
                     <div className='grid relative grid-rows-2 grid-flow-col'>
                         <div className='grid content-center row-span-3 mr-20'>
-                            <Image src={Logo} alt="logo" className={`object-contain justify-end duration-300  ${isScrolled ? 'w-40' : 'w-64'}`} />
+                            <Image src={Logo} alt="logo" className={`object-contain justify-end duration-300  ${isScrolled ? 'w-40' : 'w-56'}`} />
                         </div>
                         
-                        <div className="text-[0.85rem] font-light flex items-start gap-12 mt-[2px]">
+                        <div className="text-[0.85rem] font-light flex items-start gap-6 mt-[2px]">
                             <span className='flex gap-1'>
                                 <Image src={phone} width={15} alt="phone" />
                                 <Link href={'#'}>021-42167000</Link>
@@ -60,10 +60,10 @@ const Navbar = () => {
                             <input
                                 type="search"
                                 id="default-search"
-                                className="w-44  h-5 text-xs text-gray-900 border border-gray-300"
+                                className="w-44 h-5 text-xs text-gray-900 border border-gray-300"
                                 // placeholder="Search Mockups, Logos..."
                             />
-                            <span className='flex items-center gap-3'>
+                            <span className='flex items-center gap-4 pl-6'>
                                 <Link href={'#'}><Image src={twitter} width={13} alt="twitter" /></Link>
                                 <Link href={'#'}><Image src={instagram} width={13} alt="instagram" /></Link>
                                 <Link href={'#'}><Image src={linkedin} width={15} alt="linkedin" /></Link>
@@ -71,12 +71,8 @@ const Navbar = () => {
                                 <Link href={'#'}><Image src={language} width={16} alt="language" /></Link>
                             </span>
                         </div>
-                    {/* twitter
-                        instagram
-                        linkedin
-                        youtube
-                        language */}
-                        <ul className={`hidden lg:flex gap-10 text-[14px] font-light leading-[30px] z-[2] ${isScrolled ? 'pt-1' : ''}`}>
+
+                        <ul className={`hidden lg:flex gap-10 pr-20 text-[14px] font-light leading-[30px] z-[2] ${isScrolled ? 'pt-1' : ''}`}>
                             {links.map((item) => (
                             <li key={item.slug}>
                                 <Link href={item.slug} scroll={false} legacyBehavior>{item.name}</Link>
@@ -116,11 +112,11 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <ul className="mt-6">
-                        {links.map((item) => (
-                            <Link key={item.slug} href={item.slug} scroll={false} legacyBehavior>
-                                <li className="text-xl p-4 border-b border-gray-600 cursor-pointer" onClick={() => setNav(false)}>{item.name}</li>
-                            </Link>
-                        ))}
+                            {links.map((item) => (
+                                <Link key={item.slug} href={item.slug} scroll={false} legacyBehavior>
+                                    <li className="text-xl p-4 border-b border-gray-600 cursor-pointer" onClick={() => setNav(false)}>{item.name}</li>
+                                </Link>
+                            ))}
                         </ul>
                     </motion.div>
                     )}
