@@ -1,66 +1,63 @@
 "use client"
-import Slider from '../components/Slider';
-import { Carousel } from "@material-tailwind/react";
-import { Slider_2, Slider_3, Slider_4 } from '../images/sliders';
-import Slider_1 from '../images/sliders/Slider-1.jpg';
+
+import { SwiperSlide } from 'swiper/react';
+import SliderLayout from '@/components/SliderLayout';
+import Slider from '@/components/Slider';
+import { Slider_1, Slider_2, Slider_3, Slider_4 } from '../images/sliders';
 
 const sliderContent = [
     {
       id: '1',
-      img: {Slider_1},
-      alt: 'image 1',
-      title: 'The Beauty of Nature',
-      description: 'It is not so much for its beauty that the forest makes a claim upon men&apos;s hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.',
+      img: Slider_1,
+      alt: 'PASSION',
+      title: 'PASSION',
+      description: 'for providing solutions to industrial problems',
     },
   
     {
       id: '2',
-      img: {Slider_2},
-      alt: 'image 2',
-      title: 'The Beauty of Nature',
-      description: 'It is not so much for its beauty that the forest makes a claim upon men&apos;s hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.',
+      img: Slider_2,
+      alt: 'KNOWLEDGE',
+      title: 'KNOWLEDGE',
+      description: 'creation through years of research and experiments',
     },
   
     {
       id: '3',
-      img: {Slider_3},
-      alt: 'image 3',
-      title: 'The Beauty of Nature',
-      description: 'It is not so much for its beauty that the forest makes a claim upon men&apos;s hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.',
+      img: Slider_3,
+      alt: 'TECHNOLOGY',
+      title: 'TECHNOLOGY',
+      description: 'advancement by combining youthful energy and years of experience',
+      position: 'right-36'
     },
   
     {
       id: '4',
-      img: {Slider_4},
-      alt: 'image 4',
-      title: 'The Beauty of Nature',
-      description: 'It is not so much for its beauty that the forest makes a claim upon men&apos;s hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.',
+      img: Slider_4,
+      alt: 'SUSTAINABILITY',
+      title: 'SUSTAINABILITY',
+      description: 'Today progress without harming tomorrow',
     }
-  ]
+]
+
 const HomePage = () => {
   return (
     <div>
-        <div className='hidden md:block h-screen w-full'>
-        <Carousel 
-          className=""
-          loop="true" 
-          autoplay="true"
-          autoplayDelay= "5000"
-        >
-          {sliderContent.map((item) => (
-            <Slider
-                key={item.id}
-                img={item.img}
-                alt={item.alt}
-                title={item.title}
-                description={item.description}
-              />
+      <SliderLayout>
+          {sliderContent.map(slider => (
+            <SwiperSlide key={slider.id}>
+              <Slider
+                img={slider.img}
+                title={slider.title}
+                alt={slider.alt}
+                description={slider.description}
+                position={slider.position}
+                />
+            </SwiperSlide>
           ))}
-        </Carousel>
-      </div>
+      </SliderLayout>
 
       <section className='px-8 xl:px-60 mt-10'>
-        <img src={Slider_1} />
         Fermentum posuere urna nec tincidunt praesent. Aliquam faucibus purus in massa tempor nec. Sem et tortor consequat id. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Neque gravida in fermentum et sollicitudin ac orci. Dignissim cras tincidunt lobortis feugiat vivamus at. Tortor condimentum lacinia quis vel eros donec. Laoreet non curabitur gravida arcu ac tortor dignissim. Viverra maecenas accumsan lacus vel facilisis. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Turpis in eu mi bibendum neque egestas congue quisque. Amet tellus cras adipiscing enim eu turpis egestas. Id semper risus in hendrerit gravida rutrum. Nibh cras pulvinar mattis nunc sed blandit libero. Morbi tincidunt augue interdum velit.
         <br />      <br />      <br />
         Massa tincidunt nunc pulvinar sapien. Ipsum dolor sit amet consectetur adipiscing. Urna et pharetra pharetra massa. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Ipsum dolor sit amet consectetur adipiscing elit ut. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Odio facilisis mauris sit amet massa vitae. Nibh nisl condimentum id venenatis a condimentum vitae sapien. Aliquet nec ullamcorper sit amet risus nullam eget felis. Interdum consectetur libero id faucibus nisl tincidunt eget nullam.

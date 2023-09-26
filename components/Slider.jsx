@@ -1,19 +1,19 @@
 import Image from "next/image";
 
-export default function Slider({img, title, alt, description}) {
+export default function Slider({img, title, alt, description, position = 'left-36'}) {
   return (
     <div className="relative h-full w-full">
-      <img
+      <Image
         src={img}
         alt={alt}
-        className="h-full w-full object-cover"
+        className="h-screen w-full object-cover"
       />
-      <div className="absolute inset-0 grid h-full w-full items-end">
-        <div className="w-1/3 ml-12 md:w-1/3 md:ml-20 lg:ml-32 bg-black p-10">
-          <p className="mb-4 text-3xl md:text-4xl lg:text-5xl text-white font-semibold">
+      <div className="inset-0 grid h-full w-full items-end">
+        <div className={`absolute bottom-0 ${position} w-1/3 h-2/5 md:w-1/3 bg-[#144196]/90 p-10`}>
+          <p className="mb-4 text-[45px] text-white font-semibold">
           {title}
           </p>
-          <p className="mb-12 opacity-80 text-white">
+          <p className="mb-12 text-[25px] text-white animate-description">
           {description}
           </p>
         </div>
