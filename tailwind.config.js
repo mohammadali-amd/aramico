@@ -7,16 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        description: "description 1.5s ease-in",
-      },
-      keyframes: {
-        description: {
-          '0%' : {right:'-100%',opacity: 0},
-          '50%' : {opacity: 0},
-          '100%' : {right:0,opacity: 1},
-        }
-      }
+      // animation: {
+      //   description: "description 1.5s ease-in",
+      // },
+      // keyframes: {
+      //   description: {
+      //     '0%' : {right:'-100%',opacity: 0},
+      //     '50%' : {opacity: 0},
+      //     '100%' : {right:0,opacity: 1},
+      //   }
+      // }
     },
   },
   plugins: [],
