@@ -38,18 +38,18 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className='hidden lg:block'>
                     <div className='grid relative grid-rows-2 grid-flow-col'>
-                        <div className='grid content-center row-span-3 mr-20'>
+                        <Link href={'/'} className='grid content-center row-span-3 mr-20'>
                             <Image src={Logo} alt="logo" className={`object-contain justify-end duration-300  ${isScrolled ? 'w-40' : 'w-56'}`} />
-                        </div>
+                        </Link>
                         
-                        <div className="text-[0.85rem] font-light flex items-start gap-6 mt-[2px]">
+                        <div className="text-[0.85rem] text-text font-light flex items-start gap-6 mt-[2px]">
                             <span className='flex gap-1'>
                                 <Image src={phone} width={15} alt="phone" />
-                                <Link href={'#'}>021-42167000</Link>
+                                <Link href={'tel:02142167000'}>021-42167000</Link>
                             </span>
                             <span className='flex gap-1'>
                                 <Image src={email} width={15} alt="email" />
-                                <Link href={'#'}>info@arami-co.com</Link>
+                                <Link href={'mailto:info@arami-co.com'}>info@arami-co.com</Link>
                             </span>
                         </div>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
                             </span>
                         </div>
 
-                        <ul className={`hidden lg:flex gap-10 pr-20 text-[14px] font-light leading-[30px] z-[2] ${isScrolled ? 'pt-1' : ''}`}>
+                        <ul className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${isScrolled ? 'pt-1' : ''}`}>
                             {links.map((item) => (
                             <li key={item.slug}>
                                 <Link href={item.slug} scroll={false} legacyBehavior>{item.name}</Link>
@@ -101,11 +101,7 @@ const Navbar = () => {
                     <Image src="/menu.svg" width={100} height={100} alt="menu" onClick={() => setNav(true)} className="w-[24px] h-[24px] object-contain" /> */}
 
                     {nav && (
-                    <motion.div
-                        whileInView={{ x: [300, 0] }}
-                        transition={{ duration: 0.5, ease: 'easeInOut' }}
-                        className={nav ? 'fixed right-0 top-0 w-[85%] z-20 h-full border-r border-r-gray-900 bg-[#000300] opacity-[85%]' : 'fixed right-[-100%]'}
-                    >
+                    <div className={nav ? 'fixed right-0 top-0 w-[85%] z-20 h-full border-r border-r-gray-900 bg-[#000300] opacity-[85%]' : 'fixed right-[-100%]'}>
                         <div onClick={() => setNav(false)} className="flex justify-end m-6">
                             <Link href="/">
                                 <Image src="/close.svg" alt="close" className="w-[50px] h-[50px]" />
@@ -118,7 +114,7 @@ const Navbar = () => {
                                 </Link>
                             ))}
                         </ul>
-                    </motion.div>
+                    </div>
                     )}
                 </div>
             </nav>
