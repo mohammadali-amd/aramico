@@ -28,7 +28,7 @@ const sliderContent = [
       alt: 'TECHNOLOGY',
       title: 'TECHNOLOGY',
       description: 'advancement by combining youthful energy and years of experience',
-      position: 'right-36'
+      position: 'right',
     },
   
     {
@@ -52,7 +52,7 @@ const HomePage = () => {
                 alt={slider.alt}
                 description={slider.description}
                 position={slider.position}
-                />
+              />
             </SwiperSlide>
           ))}
       </SliderLayout>

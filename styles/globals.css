@@ -56,3 +56,26 @@ body {
   50%  {opacity: 0;}
   100%   {right:0;opacity: 1;}
 }
+
+/* .slider-content-bg {
+  position: relative;
+  animation: content .5s ease-in;
+}
+@keyframes content {
+  0%  {top:-100%;opacity: 0;}
+  50%  {opacity: 0;}
+  100%   {top:0;opacity: 1;}
+} */
+
+.swiper-button-prev, .swiper-button-next {
+  padding: 1.9rem;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background-color: black;
+  transition-duration: .5s;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  padding: 7px;
+}
