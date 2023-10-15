@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #144196;
+  --secondary: #54595F;
+  --text: #7A7A7A;
+  --accent: #06283D;
+}
+
 @font-face {
   font-family: Ubuntu;
   src: url("../public/font/Ubuntu-Regular.ttf");
@@ -20,6 +27,17 @@
   font-family: 'Ubuntu';
 }
 
+h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--primary)
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary)
+}
 
 html,
 body {
@@ -76,4 +94,8 @@ body {
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
   padding: 7px;
+}
+
+.page-layout {
+  margin-inline: 350px;
 }
