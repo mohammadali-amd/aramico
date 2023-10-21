@@ -99,3 +99,10 @@ body {
 .page-layout {
   margin-inline: 350px;
 }
+
+
+/* Navbar Dropdown Hover */
+li>ul { transform: translatex(100%) scale(0) }
+li:hover>ul { transform: translatex(101%) scale(1) }
+/* .group:hover .group-hover\:scale-100 { transform: scale(1) } */
+/* .scale-0 { transform: scale(0) } */
