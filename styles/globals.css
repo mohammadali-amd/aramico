@@ -97,7 +97,7 @@ body {
 }
 
 .page-layout {
-  margin-inline: 350px;
+  @apply mx-6 md:mx-[350px];
 }
 
 

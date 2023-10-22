@@ -7,7 +7,7 @@ import { cta_phone, cta_chat_message, cta_email_open, cta_messaging, cta_youtube
 const CTA = () => {
   const style= 'flex bg-primary text-white p-4 duration-300';
   return (
-    <aside className="fixed gap-10 z-10">
+    <aside className="fixed gap-10 z-10 hidden md:block">
         <div className='fixed right-0 top-[16rem] '>
             <Link href={'tel:02142167000'} className={`${style} hover:pr-44`}>
                 <Image src={cta_phone} width={28} alt="phone number"/>

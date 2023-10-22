@@ -106,7 +106,7 @@ const Navbar = () => {
                                 <Link href={'#'}><Image src={youtube} width={16} alt="youtube" /></Link>
                                 <span className='group'>
                                     <Image src={language} width={16} alt="language" className='cursor-pointer' />
-                                    <ul className='bg-white border-b-4 border-primary drop-shadow-2xl scale-0 group-hover:scale-100 py-1 z-10 absolute text-[0.9rem] text-text'>
+                                    <ul className='bg-white border-b-4 border-primary drop-shadow-2xl scale-0 group-hover:scale-100 py-1 -ml-6 z-10 absolute text-[0.9rem] text-text'>
                                         <li className='py-1 relative'>
                                             <Link href={'#'} className='hover:text-primary px-6'>
                                                 English
@@ -134,7 +134,7 @@ const Navbar = () => {
                                             {item.name}
                                         </span>
                                     </Link>
-                                    <ul className='bg-white drop-shadow-2xl scale-0 group-hover:scale-100 py-1 absolute origin-top min-w-max'>
+                                    <ul className='bg-white drop-shadow-2xl scale-0 group-hover:scale-100 py-1 absolute origin-top -ml-4 w-32 min-w-max'>
                                         {item?.dropdown?.map((dropdown) => (
                                             <li className='relative' key={dropdown.slug}>
                                                 <Link 
