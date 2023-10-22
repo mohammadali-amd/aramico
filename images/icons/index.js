@@ -11,6 +11,7 @@ import cta_chat_message from './chat_message_sent.svg';
 import cta_email_open from './email_open.svg';
 import cta_messaging from './messaging.svg';
 import cta_youtube from './youtube.svg';
+import tick_box from './icons8_tick_box.svg';
 
 export {
     phone,
@@ -26,4 +27,5 @@ export {
     cta_email_open,
     cta_messaging,
     cta_youtube,
+    tick_box
 };
