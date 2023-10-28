@@ -1,6 +1,15 @@
-const Divider = ({width = '32', mb = '6', mt = '2'}) => {
+const Divider = ({ width = 90, mb = 30, mt = 8 }) => {
   return (
-    <hr className={`w-${width} h-[2px] bg-primary border-0 mb-${mb} mt-${mt}`} />
+    <hr
+      style={{
+        border: "1px solid var(--primary)",
+        height: "2px",
+        width: `${width}px`,
+        marginBottom: `${mb}px`,
+        marginTop: `${mt}px`,
+      }}
+      // className={`w-${width} h-[2px] bg-primary border-0 mb-${mb} mt-${mt}`}
+    />
   );
 };
 
