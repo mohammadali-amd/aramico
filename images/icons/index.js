@@ -12,6 +12,9 @@ import cta_email_open from './email_open.svg';
 import cta_messaging from './messaging.svg';
 import cta_youtube from './youtube.svg';
 import tick_box from './icons8_tick_box.svg';
+import location from './icons8_location.svg';
+import whatsapp from './icons8_whatsapp.svg';
+import fax from './icons8_fax.svg';
 
 export {
     phone,
@@ -27,5 +30,8 @@ export {
     cta_email_open,
     cta_messaging,
     cta_youtube,
-    tick_box
+    tick_box,
+    location,
+    whatsapp,
+    fax
 };
