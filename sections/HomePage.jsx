@@ -74,11 +74,11 @@ const HomePage = () => {
         </h1>
         <Divider className="my-3" />
         <h2>A perfect harmony of research, design and execution</h2>
-        <div className="flex justify-between mt-6">
+        {/* <div className="flex justify-between mt-6">
           <Image src={pic_1} alt="" className="w-[140px] md:w-[390px]" />
           <Image src={pic_2} alt="" className="w-[140px] md:w-[390px]" />
           <Image src={pic_3} alt="" className="w-[140px] md:w-[390px]" />
-        </div>
+        </div> */}
 
         <p className="py-10 text-base text-text">
           <b>ARAMICO</b> is a trustworthy brand for providing industrial

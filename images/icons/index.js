@@ -15,6 +15,7 @@ import tick_box from './icons8_tick_box.svg';
 import location from './icons8_location.svg';
 import whatsapp from './icons8_whatsapp.svg';
 import fax from './icons8_fax.svg';
+import menu from './icons8_menu.svg';
 
 export {
     phone,
@@ -33,5 +34,6 @@ export {
     tick_box,
     location,
     whatsapp,
-    fax
+    fax,
+    menu
 };

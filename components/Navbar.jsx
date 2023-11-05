@@ -12,6 +12,7 @@ import {
   linkedin,
   youtube,
   language,
+  menu,
 } from "../images/icons";
 import Logo from "../public/aramico-Logo.png";
 import Image from "next/image";
@@ -225,22 +226,50 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="flex items-center mx-auto gap-[200px] lg:hidden z-[20]">
+        <div className="flex items-center lg:hidden z-[20]">
           <div className="grid grid-cols-4 gap-4">
-            <div>01</div>
-            <div>02</div>
-            <div>03</div>
-            <div>04</div>
-            <div className="col-span-2">05</div>
-            <div className="col-span-2 flex justify-end">06</div>
+            <div>
+              <Image src={phone} alt="phone" className="w-5 h-5" />
+            </div>
+            <div className="flex justify-center">
+              <Image src={email} alt="email" className="w-5 h-5" />
+            </div>
+            <div className="flex justify-center">
+              <Image src={search} alt="search" className="w-5 h-5" />
+            </div>
+            <div className="flex justify-end">
+              <Image src={language} alt="language" className="w-5 h-5" />
+            </div>
+            <div className="col-span-2">
+              <Link href={"/"}>
+                <Image
+                  src={Logo}
+                  alt="logo"
+                  className="object-contain duration-300  w-40"
+                />
+              </Link>
+            </div>
+            <div className="col-span-2 flex justify-end items-center">
+              <Image src={menu} alt="menu" className="w-5 h-5" />
+            </div>
           </div>
 
-          {/* Logo */}
-          {/* <Link href="/#top" className="z-10">
-                        <Image src={Logo} alt="logo" className="w-60 md:w-[90px] object-contain" />
-                    </Link>
-                    <Image src="/menu.svg" width={100} height={100} alt="menu" onClick={() => setNav(true)} className="w-[24px] h-[24px] object-contain" /> */}
-
+          {/* 
+              <Link href={"/"} className="grid content-center row-span-3 mr-20">
+                <Image
+                  src={Logo}
+                  alt="logo"
+                  className={`object-contain justify-end duration-300  ${
+                    isScrolled ? "w-40" : "w-56"
+                  }`}
+                />
+              </Link>
+            </div>
+            <div className="col-span-2 flex justify-end">
+              <Image src={menu} alt="menu" className="w-5 h-5" />
+            </div>
+          </div>
+           */}
           {nav && (
             <div
               className={
