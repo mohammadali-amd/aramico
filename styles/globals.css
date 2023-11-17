@@ -57,35 +57,67 @@ body {
   animation: heading 1.5s ease-in;
   text-transform: uppercase;
 }
+
 @keyframes heading {
-  0%  {left:-100%;opacity: 0;}
-  50%  {opacity: 0;}
-  100%   {left:0;opacity: 1;}
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 .slider-description {
   position: relative;
   animation: description 1.5s ease-in;
 }
+
 @keyframes description {
-  0%  {right:-100%;opacity: 0;}
-  50%  {opacity: 0;}
-  100%   {right:0;opacity: 1;}
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
 }
 
 .slider-content-bg {
   animation: content 1s ease-in-out;
 }
+
 @keyframes content {
-  0%  {bottom:100px;opacity: 0;}
-  100%   {bottom: 0;opacity: 1;}
+  0% {
+    bottom: 100px;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   padding: 1.9rem;
 }
 
-.swiper-button-prev:hover, .swiper-button-next:hover {
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
   background-color: black;
   transition-duration: .5s;
 }
@@ -95,12 +127,30 @@ body {
 }
 
 .page-layout {
-  @apply mx-6 md:mx-[350px];
+  @apply mx-6 md:mx-[250px];
 }
 
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #144196;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06283D;
+}
 
 /* Navbar Dropdown Hover */
-li>ul { transform: translatex(100%) scale(0) }
-li:hover>ul { transform: translatex(101%) scale(1) }
+li>ul {
+  transform: translatex(100%) scale(0)
+}
+
+li:hover>ul {
+  transform: translatex(101%) scale(1)
+}
+
 /* .group:hover .group-hover\:scale-100 { transform: scale(1) } */
 /* .scale-0 { transform: scale(0) } */

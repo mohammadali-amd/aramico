@@ -6,7 +6,7 @@ import Divider from "./Divider";
 const Footer = () => {
   return (
     <div className="bg-gray-100 mt-20">
-      <div className="grid md:grid-cols-3 gap-10 pt-16 md:pt-28 pb-16 page-layout">
+      <div className="grid md:grid-cols-3 gap-20 pt-16 md:pt-28 pb-16 mx-6 md:mx-[200px]">
         {/* Contact Information */}
         <div>
           <div className="flex justify-center md:justify-start">
@@ -51,10 +51,10 @@ const Footer = () => {
         </div>
 
         {/* Our Group Companies */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 md:ml-16">
           <div>
             <h3 className="text-lg font-bold">Our Group Companies</h3>
-            <Divider mt={0} width={50} />
+            <Divider mt={0} width={60} />
           </div>
           <ul className="grid md:grid-cols-3 gap-y-6">
             <li>
@@ -129,7 +129,7 @@ const Footer = () => {
                 </span>
                 <span className="font-bold">AFA</span>
               </div>
-              <p className="mt-2">Magnesium Special Alloys developer</p>
+              <p className="mt-2">Magnesium Special Alloys <br /> developer</p>
             </li>
             <li>
               <div className="flex gap-2">

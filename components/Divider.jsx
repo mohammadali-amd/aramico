@@ -3,12 +3,12 @@ const Divider = ({ width = 90, mb = 30, mt = 8 }) => {
     <hr
       style={{
         border: "1px solid var(--primary)",
-        height: "2px",
+        height: "1px",
         width: `${width}px`,
         marginBottom: `${mb}px`,
         marginTop: `${mt}px`,
       }}
-      // className={`w-${width} h-[2px] bg-primary border-0 mb-${mb} mt-${mt}`}
+    // className={`w-${width} h-[2px] bg-primary border-0 mb-${mb} mt-${mt}`}
     />
   );
 };

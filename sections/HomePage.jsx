@@ -68,17 +68,17 @@ const HomePage = () => {
         </SliderLayout>
       </div>
 
-      <section className="mt-[8rem] md:mt-0 page-layout">
-        <h1 className="text-3xl md:text-5xl mt-8">
+      <section className="mt-[9rem] md:mt-0 page-layout">
+        <h1 className="text-2xl md:text-4xl mt-8">
           Industrial & Engineering Projects Implementation
         </h1>
         <Divider className="my-3" />
         <h2>A perfect harmony of research, design and execution</h2>
-        {/* <div className="flex justify-between mt-6">
-          <Image src={pic_1} alt="" className="w-[140px] md:w-[390px]" />
-          <Image src={pic_2} alt="" className="w-[140px] md:w-[390px]" />
-          <Image src={pic_3} alt="" className="w-[140px] md:w-[390px]" />
-        </div> */}
+        <div className="flex justify-between mt-6">
+          <Image src={pic_1} alt="" className="w-[100px] md:w-[330px]" />
+          <Image src={pic_2} alt="" className="w-[100px] md:w-[330px]" />
+          <Image src={pic_3} alt="" className="w-[100px] md:w-[330px]" />
+        </div>
 
         <p className="py-10 text-base text-text">
           <b>ARAMICO</b> is a trustworthy brand for providing industrial
@@ -90,7 +90,7 @@ const HomePage = () => {
         </p>
 
         <ul className="space-y-3">
-          <li className="flex align-middle gap-5">
+          <li className="inline-grid grid-flow-col gap-5">
             <span className="mt-[2px]">
               <Image src={tick_box} alt="check box" width={17} />
             </span>
@@ -100,7 +100,7 @@ const HomePage = () => {
               of minerals, etc.
             </span>
           </li>
-          <li className="flex align-middle gap-5">
+          <li className="inline-grid grid-flow-col gap-5">
             <span className="mt-[2px]">
               <Image src={tick_box} alt="check box" width={17} />
             </span>
@@ -112,7 +112,7 @@ const HomePage = () => {
               casting, etc.
             </span>
           </li>
-          <li className="flex align-middle gap-5">
+          <li className="inline-grid grid-flow-col gap-5">
             <span className="mt-[2px]">
               <Image src={tick_box} alt="check box" width={17} />
             </span>
