@@ -24,9 +24,7 @@ const SliderLayout = ({ children }) => {
         centeredSlides={true}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation={true}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}>
+        navigation={true}>
         {children}
       </Swiper>
     </div>

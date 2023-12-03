@@ -2,9 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
 
-import { phone, email, search, twitter, instagram, linkedin, youtube, language, menu, } from "../images/icons";
+import {
+  phone,
+  email,
+  search,
+  twitter,
+  instagram,
+  linkedin,
+  youtube,
+  language,
+  menu,
+} from "../images/icons";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Logo from "../public/aramico-Logo.png";
 import Image from "next/image";
 
@@ -99,12 +115,12 @@ const Navbar = () => {
   };
 
   const mobileMenu = () => {
-    setOpenMenu(!openMenu)
-  }
+    setOpenMenu(!openMenu);
+  };
 
   const hiddenDropdown = () => {
-    setHidden(!hidden)
-  }
+    setHidden(!hidden);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", changeStyle);
@@ -123,8 +139,9 @@ const Navbar = () => {
               <Image
                 src={Logo}
                 alt="logo"
-                className={`object-contain justify-end duration-300  ${isScrolled ? "w-40" : "w-56"
-                  }`}
+                className={`object-contain justify-end duration-300  ${
+                  isScrolled ? "w-40" : "w-56"
+                }`}
               />
             </Link>
 
@@ -147,7 +164,7 @@ const Navbar = () => {
                 type="search"
                 id="default-search"
                 className="w-44 h-5 text-xs text-gray-900 border border-gray-300"
-              // placeholder="Search Mockups, Logos..."
+                // placeholder="Search Mockups, Logos..."
               />
               <span className="flex items-center gap-4 pl-6">
                 <Link href={"#"}>
@@ -186,8 +203,9 @@ const Navbar = () => {
             </div>
 
             <ul
-              className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${isScrolled ? "pt-1" : ""
-                }`}>
+              className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${
+                isScrolled ? "pt-1" : ""
+              }`}>
               {links.map((item) => (
                 <li key={item.slug} className="group inline-block">
                   <Link href={item.slug} scroll={false} legacyBehavior>
@@ -195,7 +213,10 @@ const Navbar = () => {
                       {item.name}
                     </span>
                   </Link>
-                  <ul className={`${!item?.dropdown && 'hidden'} bg-white drop-shadow-lg scale-0 group-hover:scale-100 py-1 absolute origin-top -ml-4 w-32 min-w-max`}>
+                  <ul
+                    className={`${
+                      !item?.dropdown && "hidden"
+                    } bg-white drop-shadow-lg scale-0 group-hover:scale-100 py-1 absolute origin-top -ml-4 w-32 min-w-max`}>
                     {item?.dropdown?.map((dropdown) => (
                       <li className="relative" key={dropdown.slug}>
                         <Link
@@ -242,42 +263,76 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex justify-end items-center">
-              <Image onClick={mobileMenu} src={menu} alt="menu" className="w-5 h-5" />
+              <Image
+                onClick={mobileMenu}
+                src={menu}
+                alt="menu"
+                className="w-5 h-5"
+              />
             </div>
           </div>
 
           {openMenu && (
-            <ul className="mt-4">
-              <li>
-                {links.map((item) => (
-                  <Accordion style={{ boxShadow: 'none', padding: '0', margin: '0' }} key={links.name}>
-                    <AccordionSummary style={{ padding: '0' }}>
-                      <Link href={item.slug}>{item.name}</Link>
-                    </AccordionSummary>
-                    <AccordionDetails style={{ padding: '0' }}>
-                      {item?.dropdown?.map((subItem) => (
-                        <Accordion key={subItem.slug} style={{ boxShadow: 'none', padding: '0', margin: '0' }}>
-                          <AccordionSummary style={{ padding: '0' }}>
-                            <Link href={subItem.slug}>{subItem.name}</Link>
-                          </AccordionSummary>
-                          <AccordionDetails style={{ padding: '0' }}>
-                            {subItem?.dropdownb?.map((secSubItem) => (
-                              <Accordion key={secSubItem.slug} style={{ boxShadow: 'none' }}>
-                                <AccordionSummary style={{ padding: '0' }}>
-                                  <Link href={secSubItem.slug}>{secSubItem.name}</Link>
-                                </AccordionSummary>
-                              </Accordion>
-                            ))}
-                          </AccordionDetails>
-                        </Accordion>
-                      ))}
-                    </AccordionDetails>
-                  </Accordion>
-                ))}
-              </li>
-              {/* {links.map((item) => (
-              ))} */}
-            </ul>
+            <div
+              style={{
+                overflowY: "auto",
+                maxHeight: "100vh",
+              }}>
+              <ul className="mt-4">
+                <li>
+                  {links.map((item) => (
+                    <Accordion
+                      style={{ boxShadow: "none", padding: "0", margin: "0" }}
+                      key={links.name}>
+                      <AccordionSummary
+                        className="hover:bg-primary hover:text-white"
+                        style={{ paddingBlock: "0" }}
+                        expandIcon={item.dropdown ? <ExpandMoreIcon /> : null}>
+                        <Link href={item.slug} className="text-[16px]">
+                          {item.name}
+                        </Link>
+                      </AccordionSummary>
+                      <AccordionDetails style={{ paddingBlock: "0" }}>
+                        {item?.dropdown?.map((subItem) => (
+                          <Accordion
+                            key={subItem.slug}
+                            style={{
+                              boxShadow: "none",
+                              padding: "0",
+                              margin: "0",
+                            }}>
+                            <AccordionSummary
+                              style={{ padding: "0" }}
+                              expandIcon={
+                                subItem.dropdownb ? <ExpandMoreIcon /> : null
+                              }>
+                              <Link href={subItem.slug} className="text-[16px]">
+                                {subItem.name}
+                              </Link>
+                            </AccordionSummary>
+                            <AccordionDetails style={{ paddingBlock: "0" }}>
+                              {subItem?.dropdownb?.map((secSubItem) => (
+                                <Accordion
+                                  key={secSubItem.slug}
+                                  style={{ boxShadow: "none" }}>
+                                  <AccordionSummary style={{ padding: "0" }}>
+                                    <Link
+                                      href={secSubItem.slug}
+                                      className="text-[16px]">
+                                      {secSubItem.name}
+                                    </Link>
+                                  </AccordionSummary>
+                                </Accordion>
+                              ))}
+                            </AccordionDetails>
+                          </Accordion>
+                        ))}
+                      </AccordionDetails>
+                    </Accordion>
+                  ))}
+                </li>
+              </ul>
+            </div>
           )}
         </div>
       </nav>
