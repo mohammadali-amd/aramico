@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 
 import {
   phone,
@@ -207,7 +202,7 @@ const Navbar = () => {
                 isScrolled ? "pt-1" : ""
               }`}>
               {links.map((item) => (
-                <li key={item.slug} className="group inline-block">
+                <li key={item.slug} className="group/dropdown inline-block">
                   <Link href={item.slug} scroll={false} legacyBehavior>
                     <span className="group-hover:text-primary cursor-pointer min-w-max">
                       {item.name}
@@ -216,15 +211,20 @@ const Navbar = () => {
                   <ul
                     className={`${
                       !item?.dropdown && "hidden"
-                    } bg-white drop-shadow-lg scale-0 group-hover:scale-100 py-1 absolute origin-top -ml-4 w-32 min-w-max`}>
+                    } bg-white drop-shadow-lg scale-0 group-hover/dropdown:scale-100 py-1 absolute -ml-4 w-32 min-w-max`}>
                     {item?.dropdown?.map((dropdown) => (
-                      <li className="relative" key={dropdown.slug}>
+                      <li
+                        className="relative group/dropdownb"
+                        key={dropdown.slug}>
                         <Link
                           className="w-full flex items-center outline-none focus:outline-none px-4 hover:text-primary"
                           href={dropdown.slug}>
                           {dropdown.name}
                         </Link>
-                        <ul className="bg-white drop-shadow-lg py-1 absolute top-0 right-1 origin-top-left min-w-max">
+                        <ul
+                          className={`${
+                            !dropdown?.dropdownb && "hidden"
+                          } bg-white drop-shadow-lg scale-0 group-hover/dropdownb:scale-100 absolute left-[10.7rem] top-0 min-w-max`}>
                           {dropdown?.dropdownb?.map((dropdownb) => (
                             <li key={dropdownb.slug} className="relative">
                               <Link
