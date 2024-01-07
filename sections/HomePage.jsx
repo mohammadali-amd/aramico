@@ -3,6 +3,7 @@
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import SliderLayout from "@/components/SliderLayout";
+import CarouselLayout from "@/components/CarouselLayout";
 import Slider from "@/components/Slider";
 import ProductLayout from "@/components/ProductLayout/ProductLayout";
 import ProductBox from "@/components/ProductLayout/ProductBox";
@@ -75,9 +76,17 @@ const HomePage = () => {
         <Divider className="my-3" />
         <h2>A perfect harmony of research, design and execution</h2>
         <div className="flex justify-between mt-6">
-          <Image src={pic_1} alt="" className="w-[100px] md:w-[330px]" />
-          <Image src={pic_2} alt="" className="w-[100px] md:w-[330px]" />
-          <Image src={pic_3} alt="" className="w-[100px] md:w-[330px]" />
+          <CarouselLayout>
+            <SwiperSlide>
+              <Image src={pic_1} alt="pic_1" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image src={pic_2} alt="pic_2" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image src={pic_3} alt="pic_3" />
+            </SwiperSlide>
+          </CarouselLayout>
         </div>
 
         <p className="py-10 text-base text-text">
