@@ -127,7 +127,7 @@ body {
 }
 
 .page-layout {
-  @apply mx-6 md:mx-[250px];
+  @apply mx-6 xl:mx-[250px];
 }
 
 /* Scroll Bar */
