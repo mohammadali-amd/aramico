@@ -2,10 +2,64 @@ import Image from "next/image";
 import Logo from "../public/aramico-Logo.png";
 import { phone, email, location, fax, whatsapp } from "../images/icons";
 import Divider from "./Divider";
+import Link from "next/link";
+
+const companies = [
+  {
+    title: "Alpha",
+    description: "Alpha Alumina producer",
+    url: "#",
+  },
+  {
+    title: "ALTUS",
+    description: "Electrofused products manufacturer",
+    url: "#",
+  },
+  {
+    title: "KHORASAN MG",
+    description: "Magnesium Ingot producer",
+    url: "#",
+  },
+  {
+    title: "ITAD",
+    description: "Copper Cathode producer",
+    url: "#",
+  },
+  {
+    title: "ALCAT",
+    description: "Active Alumina producer",
+    url: "#",
+  },
+  {
+    title: "BASPART",
+    description: "Granules and extruded polymeric compounds producer",
+    url: "#",
+  },
+  {
+    title: "YARAN",
+    description: "Furnace and Kiln designer and manufacturer",
+    url: "#",
+  },
+  {
+    title: "AFA",
+    description: "Magnesium Special Alloys developer",
+    url: "#",
+  },
+  {
+    title: "MSG",
+    description: "Industrial Equipment manufacturer",
+    url: "#",
+  },
+  {
+    title: "ARAMED",
+    description: "Medical Equipment designer and manufacturer",
+    url: "#",
+  },
+];
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 mt-20">
+    <div className="bg-gray-100 mt-20 text-black">
       <div className="grid md:grid-cols-3 gap-20 pt-16 md:pt-28 pb-16 mx-6 xl:mx-[200px]">
         {/* Contact Information */}
         <div>
@@ -13,7 +67,7 @@ const Footer = () => {
             <Image src={Logo} alt="Logo" className="w-56" />
           </div>
           <p className="mt-10 font-bold">a member of ARAMICO group</p>
-          <ul className="grid gap-2 mt-8">
+          <ul className="grid gap-2 mt-8 text-text">
             <li className="flex gap-2">
               <span className="flex">
                 <Image src={location} alt="location" className="w-4" />
@@ -57,102 +111,19 @@ const Footer = () => {
             <Divider mt={0} width={60} />
           </div>
           <ul className="grid md:grid-cols-3 gap-y-6">
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">ALPHA</span>
-              </div>
-              <p className="mt-2">Alpha Alumina producer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">ALTUS</span>
-              </div>
-              <p className="mt-2 pr-10">Electrofused products manufacturer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">KHORASAN MG</span>
-              </div>
-              <p className="mt-2">Magnesium Ingot producer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">ITAD</span>
-              </div>
-              <p className="mt-2">Copper Cathode producer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">ALCAT</span>
-              </div>
-              <p className="mt-2">Active Alumina producer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">BASPART</span>
-              </div>
-              <p className="mt-2">
-                Granules and extruded polymeric compounds producer
-              </p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">YARAN</span>
-              </div>
-              <p className="mt-2">Furnace and Kiln designer and manufacturer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">AFA</span>
-              </div>
-              <p className="mt-2">
-                Magnesium Special Alloys <br /> developer
-              </p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">MSG</span>
-              </div>
-              <p className="mt-2">Industrial Equipment manufacturer</p>
-            </li>
-            <li>
-              <div className="flex gap-2">
-                <span className="flex">
-                  <Image src={location} alt="location" className="w-4" />
-                </span>
-                <span className="font-bold">ARAMED</span>
-              </div>
-              <p className="mt-2">
-                Medical Equipment designer and manufacturer
-              </p>
-            </li>
+            {companies.map((company) => (
+              <li key={company.title}>
+                <div className="flex gap-2">
+                  <span className="flex">
+                    <Image src={location} alt="location" className="w-4" />
+                  </span>
+                  <Link href={company.url} className="font-bold">
+                    {company.title}
+                  </Link>
+                </div>
+                <p className="mt-2 text-text">{company.description}</p>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

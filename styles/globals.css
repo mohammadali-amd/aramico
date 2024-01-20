@@ -20,6 +20,12 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: Ubuntu-light;
+  src: url("../public//font/Ubuntu-Light.ttf");
+  font-weight: lighter;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +38,7 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
+  color: var(--text);
 }
 
 h1 {

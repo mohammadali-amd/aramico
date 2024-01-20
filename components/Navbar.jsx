@@ -125,7 +125,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="w-full fixed top-0 z-10 bg-white">
+    <header className="w-full fixed top-0 z-30 bg-white">
       <nav className="mx-auto lg:flex justify-center shadow-md py-5">
         {/* Desktop Menu */}
         <div className="hidden lg:block">
@@ -181,7 +181,7 @@ const Navbar = () => {
                     alt="language"
                     className="cursor-pointer"
                   />
-                  <ul className="bg-white border-b-4 border-primary drop-shadow-lg scale-0 group-hover:scale-100 py-1 -ml-6 z-10 absolute text-[0.9rem] text-text">
+                  <ul className="bg-white border-b-4 border-primary drop-shadow-lg scale-0 group-hover:scale-100 py-1 -ml-6 z-30 absolute text-[0.9rem] text-text">
                     <li className="py-1 relative">
                       <Link href={"#"} className="hover:text-primary px-6">
                         English

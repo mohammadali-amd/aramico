@@ -20,6 +20,7 @@ const SliderLayout = ({ children }) => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
+        lazy={true}
         effect={"fade"}
         centeredSlides={true}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
