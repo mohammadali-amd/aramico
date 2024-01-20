@@ -13,6 +13,7 @@ import { Slider_1, Slider_2, Slider_3, Slider_4 } from "../images/sliders";
 import { pic_1, pic_2, pic_3 } from "../images/homePage";
 import { tick_box } from "../images/icons";
 import { Magnesium_Ignot } from "../images/products";
+import Quote from "@/components/Quote";
 
 const sliderContent = [
   {
@@ -98,7 +99,7 @@ const HomePage = () => {
           customers to launch industrial projects in various fields.
         </p>
 
-        <ul className="space-y-3">
+        <ul className="space-y-3 text-text">
           <li className="inline-grid grid-flow-col gap-5">
             <span className="mt-[2px]">
               <Image src={tick_box} alt="check box" width={17} />
@@ -132,20 +133,7 @@ const HomePage = () => {
         </ul>
       </section>
 
-      <div className="bg-gray-200 grid grid-cols-1 gap-1 text-center py-8 my-10">
-        <div className="flex justify-center">
-          <Image src={tick_box} alt="quote" width={36} />
-        </div>
-        <div>
-          <span className="text-[20px] md:text-[24px]">
-            For quality, consistency, and our customers’ trust!
-          </span>
-        </div>
-        <div className="flex justify-center">
-          <Divider mb={0} width={150} />
-        </div>
-        <span className="text-[14px]">ARAMICO</span>
-      </div>
+      <Quote text="For quality, consistency, and our customers’ trust!" />
 
       <section className="page-layout">
         <h2 className="text-3xl text-primary">PROJECTS</h2>
