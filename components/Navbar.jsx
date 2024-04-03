@@ -134,9 +134,8 @@ const Navbar = () => {
               <Image
                 src={Logo}
                 alt="logo"
-                className={`object-contain justify-end duration-300  ${
-                  isScrolled ? "w-40" : "w-56"
-                }`}
+                className={`object-contain justify-end duration-300  ${isScrolled ? "w-40" : "w-56"
+                  }`}
               />
             </Link>
 
@@ -159,7 +158,7 @@ const Navbar = () => {
                 type="search"
                 id="default-search"
                 className="w-44 h-5 text-xs text-gray-900 border border-gray-300"
-                // placeholder="Search Mockups, Logos..."
+              // placeholder="Search Mockups, Logos..."
               />
               <span className="flex items-center gap-4 pl-6">
                 <Link href={"#"}>
@@ -198,35 +197,32 @@ const Navbar = () => {
             </div>
 
             <ul
-              className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${
-                isScrolled ? "pt-1" : ""
-              }`}>
+              className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${isScrolled ? "pt-1" : ""
+                }`}>
               {links.map((item) => (
-                <li key={item.slug} className="group/dropdown inline-block">
+                <li key={item.name} className="group/dropdown inline-block">
                   <Link href={item.slug} scroll={false} legacyBehavior>
                     <span className="group-hover:text-primary cursor-pointer min-w-max">
                       {item.name}
                     </span>
                   </Link>
                   <ul
-                    className={`${
-                      !item?.dropdown && "hidden"
-                    } bg-white drop-shadow-lg scale-0 group-hover/dropdown:scale-100 py-1 absolute -ml-4 w-32 min-w-max`}>
+                    className={`${!item?.dropdown && "hidden"
+                      } bg-white drop-shadow-lg scale-0 group-hover/dropdown:scale-100 py-1 absolute -ml-4 w-32 min-w-max`}>
                     {item?.dropdown?.map((dropdown) => (
                       <li
                         className="relative group/dropdownb"
-                        key={dropdown.slug}>
+                        key={dropdown.name}>
                         <Link
                           className="w-full flex items-center outline-none focus:outline-none px-4 hover:text-primary"
                           href={dropdown.slug}>
                           {dropdown.name}
                         </Link>
                         <ul
-                          className={`${
-                            !dropdown?.dropdownb && "hidden"
-                          } bg-white drop-shadow-lg scale-0 group-hover/dropdownb:scale-100 absolute left-[10.7rem] top-0 min-w-max`}>
+                          className={`${!dropdown?.dropdownb && "hidden"
+                            } bg-white drop-shadow-lg scale-0 group-hover/dropdownb:scale-100 absolute left-[10.7rem] top-0 min-w-max`}>
                           {dropdown?.dropdownb?.map((dropdownb) => (
-                            <li key={dropdownb.slug} className="relative">
+                            <li key={dropdownb.name} className="relative">
                               <Link
                                 href={dropdownb.slug}
                                 className="px-4 hover:text-primary">
@@ -295,7 +291,7 @@ const Navbar = () => {
                       <AccordionDetails style={{ paddingBlock: "0" }}>
                         {item?.dropdown?.map((subItem) => (
                           <Accordion
-                            key={subItem.slug}
+                            key={subItem.name}
                             style={{
                               boxShadow: "none",
                               padding: "0",
@@ -313,7 +309,7 @@ const Navbar = () => {
                             <AccordionDetails style={{ paddingBlock: "0" }}>
                               {subItem?.dropdownb?.map((secSubItem) => (
                                 <Accordion
-                                  key={secSubItem.slug}
+                                  key={secSubItem.name}
                                   style={{ boxShadow: "none" }}>
                                   <AccordionSummary style={{ padding: "0" }}>
                                     <Link
