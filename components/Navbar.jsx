@@ -23,53 +23,68 @@ const links = [
   {
     name: "News",
     slug: "/news",
+    activated: false,
     dropdown: [
-      { name: "News", slug: "/news" },
-      { name: "Events", slug: "/events" },
+      { name: "News", slug: "/news", activated: true },
+      { name: "Events", slug: "/events", activated: true },
     ],
   },
   {
     name: "About Us",
     slug: "/about-us",
+    activated: false,
     dropdown: [
-      { name: "Company", slug: "#asdab" },
-      { name: "History", slug: "#g" },
-      { name: "Sustainability", slug: "#d" },
+      { name: "Company", slug: "/about-us", activated: false },
+      { name: "History", slug: "#g", activated: true },
+      { name: "Sustainability", slug: "#d", activated: true },
     ],
   },
   {
     name: "Fields of work",
     slug: "#g",
+    activated: true,
     dropdown: [
       {
         name: "Metallurgical Industry",
         slug: "#asdab",
+        activated: true,
         dropdownb: [
-          { name: "Magnesium Ignot", slug: "#asdab" },
-          { name: "Copper Cathode", slug: "#asdab" },
-          { name: "Sponge Iron", slug: "#asdab" },
-          { name: "Centrifugal Casting", slug: "#asdab" },
+          { name: "Magnesium Ignot", slug: "#asdab", activated: true },
+          { name: "Copper Cathode", slug: "#asdab", activated: true },
+          { name: "Sponge Iron", slug: "#asdab", activated: true },
+          { name: "Centrifugal Casting", slug: "#asdab", activated: true },
         ],
       },
       {
         name: "Mining Industry",
         slug: "#g",
+        activated: true,
         dropdownb: [
-          { name: "Minerals calcination and roasting", slug: "#asdab" },
+          {
+            name: "Minerals calcination and roasting",
+            slug: "#asdab",
+            activated: true,
+          },
           {
             name: "Crushing, milling and material handling equipment",
             slug: "#asdab",
+            activated: true,
           },
-          { name: "Concentration of minerals", slug: "#asdab" },
+          {
+            name: "Concentration of minerals",
+            slug: "#asdab",
+            activated: true,
+          },
         ],
       },
       {
         name: "Renewable Energy",
         slug: "#d",
+        activated: true,
         dropdownb: [
-          { name: "Wind Energy", slug: "#asdab" },
-          { name: "Solar Energy", slug: "#asdab" },
-          { name: "Hydro Energy", slug: "#asdab" },
+          { name: "Wind Energy", slug: "#asdab", activated: true },
+          { name: "Solar Energy", slug: "#asdab", activated: true },
+          { name: "Hydro Energy", slug: "#asdab", activated: true },
         ],
       },
     ],
@@ -77,33 +92,41 @@ const links = [
   {
     name: "R&D",
     slug: "#d",
+    activated: true,
     dropdown: [
-      { name: "Our Approach", slug: "#asdab" },
-      { name: "R&D Projects", slug: "#g" },
+      { name: "Our Approach", slug: "#asdab", activated: true },
+      { name: "R&D Projects", slug: "#g", activated: true },
     ],
   },
   {
     name: "Projects",
     slug: "#e",
+    activated: true,
     dropdown: [
-      { name: "Magnesium Plant", slug: "/contact" },
-      { name: "Calcination Plants", slug: "#g" },
-      { name: "Copper Cathode Production Line", slug: "#a" },
-      { name: "Calcined Alumina (Alpha) Plant", slug: "#a" },
-      { name: "Electrofused Minerals Plant", slug: "#a" },
-      { name: "Ammonium Sulfate Production Line", slug: "#a" },
-      { name: "Fluidized bed Mineral Roasting plants", slug: "#a" },
-      { name: "Briquetting Plants", slug: "#a" },
+      { name: "Magnesium Plant", slug: "/contact", activated: true },
+      { name: "Calcination Plants", slug: "#g", activated: true },
+      { name: "Copper Cathode Production Line", slug: "#a", activated: true },
+      { name: "Calcined Alumina (Alpha) Plant", slug: "#a", activated: true },
+      { name: "Electrofused Minerals Plant", slug: "#a", activated: true },
+      { name: "Ammonium Sulfate Production Line", slug: "#a", activated: true },
+      {
+        name: "Fluidized bed Mineral Roasting plants",
+        slug: "#a",
+        activated: true,
+      },
+      { name: "Briquetting Plants", slug: "#a", activated: true },
     ],
   },
-  { name: "Career", slug: "#f" },
-  { name: "Contact Us", slug: "/contact" },
+  { name: "Career", slug: "#f", activated: true },
+  { name: "Contact Us", slug: "/contact", activated: false },
 ];
 
 const Navbar = () => {
   const [isScrolled, setisScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [hidden, setHidden] = useState(false);
+
+  const linkDeactivate = "pointer-events-none text-gray-400";
 
   const changeStyle = () => {
     setisScrolled(window.scrollY);
@@ -134,8 +157,9 @@ const Navbar = () => {
               <Image
                 src={Logo}
                 alt="logo"
-                className={`object-contain justify-end duration-300  ${isScrolled ? "w-40" : "w-56"
-                  }`}
+                className={`object-contain justify-end duration-300  ${
+                  isScrolled ? "w-40" : "w-56"
+                }`}
               />
             </Link>
 
@@ -158,7 +182,7 @@ const Navbar = () => {
                 type="search"
                 id="default-search"
                 className="w-44 h-5 text-xs text-gray-900 border border-gray-300"
-              // placeholder="Search Mockups, Logos..."
+                // placeholder="Search Mockups, Logos..."
               />
               <span className="flex items-center gap-4 pl-6">
                 <Link href={"#"}>
@@ -197,35 +221,45 @@ const Navbar = () => {
             </div>
 
             <ul
-              className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${isScrolled ? "pt-1" : ""
-                }`}>
+              className={`hidden lg:flex gap-10 pr-20 text-[14px] text-text font-light leading-[30px] z-[2] ${
+                isScrolled ? "pt-1" : ""
+              }`}>
               {links.map((item) => (
                 <li key={item.name} className="group/dropdown inline-block">
                   <Link href={item.slug} scroll={false} legacyBehavior>
-                    <span className="group-hover:text-primary cursor-pointer min-w-max">
+                    <span
+                      className={`group-hover:text-primary cursor-pointer min-w-max ${
+                        item.activated ? linkDeactivate : ""
+                      }`}>
                       {item.name}
                     </span>
                   </Link>
                   <ul
-                    className={`${!item?.dropdown && "hidden"
-                      } bg-white drop-shadow-lg scale-0 group-hover/dropdown:scale-100 py-1 absolute -ml-4 w-32 min-w-max`}>
+                    className={`${
+                      !item?.dropdown && "hidden"
+                    } bg-white drop-shadow-lg scale-0 group-hover/dropdown:scale-100 py-1 absolute -ml-4 w-32 min-w-max`}>
                     {item?.dropdown?.map((dropdown) => (
                       <li
                         className="relative group/dropdownb"
                         key={dropdown.name}>
                         <Link
-                          className="w-full flex items-center outline-none focus:outline-none px-4 hover:text-primary"
+                          className={`w-full flex items-center outline-none focus:outline-none px-4 hover:text-primary ${
+                            dropdown.activated ? linkDeactivate : ""
+                          }`}
                           href={dropdown.slug}>
                           {dropdown.name}
                         </Link>
                         <ul
-                          className={`${!dropdown?.dropdownb && "hidden"
-                            } bg-white drop-shadow-lg scale-0 group-hover/dropdownb:scale-100 absolute left-[10.7rem] top-0 min-w-max`}>
+                          className={`${
+                            !dropdown?.dropdownb && "hidden"
+                          } bg-white drop-shadow-lg scale-0 group-hover/dropdownb:scale-100 absolute left-[10.7rem] top-0 min-w-max`}>
                           {dropdown?.dropdownb?.map((dropdownb) => (
                             <li key={dropdownb.name} className="relative">
                               <Link
                                 href={dropdownb.slug}
-                                className="px-4 hover:text-primary">
+                                className={`px-4 hover:text-primary ${
+                                  dropdownb.activated ? linkDeactivate : ""
+                                }`}>
                                 {dropdownb.name}
                               </Link>
                             </li>
@@ -284,7 +318,11 @@ const Navbar = () => {
                         className="hover:bg-primary hover:text-white"
                         style={{ paddingBlock: "0" }}
                         expandIcon={item.dropdown ? <ExpandMoreIcon /> : null}>
-                        <Link href={item.slug} className="text-[16px]">
+                        <Link
+                          href={item.slug}
+                          className={`text-[16px] ${
+                            item.activated ? linkDeactivate : ""
+                          }`}>
                           {item.name}
                         </Link>
                       </AccordionSummary>
@@ -302,7 +340,11 @@ const Navbar = () => {
                               expandIcon={
                                 subItem.dropdownb ? <ExpandMoreIcon /> : null
                               }>
-                              <Link href={subItem.slug} className="text-[16px]">
+                              <Link
+                                href={subItem.slug}
+                                className={`text-[16px] ${
+                                  subItem.activated ? linkDeactivate : ""
+                                }`}>
                                 {subItem.name}
                               </Link>
                             </AccordionSummary>
@@ -314,7 +356,11 @@ const Navbar = () => {
                                   <AccordionSummary style={{ padding: "0" }}>
                                     <Link
                                       href={secSubItem.slug}
-                                      className="text-[16px]">
+                                      className={`text-[16px] ${
+                                        secSubItem.activated
+                                          ? linkDeactivate
+                                          : ""
+                                      }`}>
                                       {secSubItem.name}
                                     </Link>
                                   </AccordionSummary>

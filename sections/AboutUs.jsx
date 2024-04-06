@@ -64,7 +64,7 @@ const AboutUs = () => {
         </SliderLayout>
       </div>
 
-      <div className="md:y-10 my-10 mt-36 md:mt-8 page-layout">
+      <div className="my-10 mt-36 md:mt-8 page-layout">
         <h1 className="text-[36px]">About Us</h1>
         <Divider mt={0} />
 
